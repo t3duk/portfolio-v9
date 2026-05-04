@@ -4,7 +4,7 @@ import { ContentBox } from "../layout/shell";
 
 export const Description = () => {
   return (
-    <ContentBox className="flex flex-col gap-1" position="middle">
+    <ContentBox className="flex flex-col gap-1" position="last">
       <p className="text-foreground/80">
         I&apos;m a <Num>{getAge(new Date("2009-01-22"))}</Num> year old{" "}
         <span className="text-foreground">Software Engineer</span> from{" "}

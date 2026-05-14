@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { LetsConnect } from "../contact-me";
 import { ContentBox } from "../layout/shell";
+import { Button } from "../ui/button";
 
 export const Header = () => {
   return (
@@ -12,7 +14,7 @@ export const Header = () => {
           <span className="font-extrabold font-mono text-4xl md:text-5xl">
             Ted
           </span>
-          <span className="font-medium font-mono text-3xl text-muted-foreground md:text-4xl">
+          <span className="font-medium font-mono text-4xl text-muted-foreground md:text-5xl">
             Brine
           </span>
         </h1>
@@ -20,7 +22,25 @@ export const Header = () => {
           Software Engineer
         </p>
       </div>
-      <div className="hidden flex-row items-center gap-4 sm:flex">
+      <div className="hidden flex-row items-center gap-1 sm:flex">
+        <Button asChild={true} className="" variant="ghost" size="icon">
+          <Link
+            href="https://x.com/tedbrine"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/x.svg" alt="X" className="h-4 w-4" />
+          </Link>
+        </Button>
+        <Button asChild={true} className="" variant="ghost" size="icon">
+          <Link
+            href="https://linkedin.com/in/tedbrine"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/linkedin.svg" alt="X" className="h-4 w-4" />
+          </Link>
+        </Button>
         <LetsConnect />
       </div>
     </ContentBox>

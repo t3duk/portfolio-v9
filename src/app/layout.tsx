@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { SensoryUIProvider } from "@/components/ui/sensory-ui/config/provider";
 import "./globals.css";
 import { GTProvider } from "gt-next";
 import { ThemeProvider } from "next-themes";
@@ -33,7 +34,9 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <GTProvider>
-          <ThemeProvider forcedTheme="dark">{children}</ThemeProvider>
+          <SensoryUIProvider>
+            <ThemeProvider forcedTheme="dark">{children}</ThemeProvider>
+          </SensoryUIProvider>
         </GTProvider>
       </body>
     </html>

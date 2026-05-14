@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 export const Header = () => {
   return (
     <ContentBox
-      className="flex flex-row items-end justify-between"
+      className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-0"
       position="middle"
     >
       <div className="flex flex-col gap-1">
@@ -22,7 +22,7 @@ export const Header = () => {
           Software Engineer
         </p>
       </div>
-      <div className="hidden flex-row items-center gap-1 sm:flex">
+      <div className="flex-row items-center gap-1">
         <Button asChild={true} className="" variant="ghost" size="icon">
           <Link
             href="https://x.com/tedbrine"

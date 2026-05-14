@@ -5,20 +5,23 @@ type SectionPosition = "first" | "middle" | "last" | "single";
 export const PageShell = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto grid min-h-screen grid-cols-[1fr_48px_minmax(0,48rem)_48px_1fr]">
-        <div />
-        <PatternRail />
-        <div className="relative col-start-3">{children}</div>
-        <PatternRail />
-        <div />
+      <div className="mx-auto grid min-h-screen grid-cols-[24px_minmax(0,1fr)_24px] md:grid-cols-[1fr_48px_minmax(0,48rem)_48px_1fr]">
+        <PatternRail className="col-start-1 md:col-start-2" />
+        <div className="relative col-start-2 md:col-start-3">{children}</div>
+        <PatternRail className="col-start-3 md:col-start-4" />
       </div>
     </main>
   );
 };
 
-export const PatternRail = () => {
+export const PatternRail = ({ className }: { className?: string }) => {
   return (
-    <div className="border-[--pattern-fg] border-x bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:color-mix(in_oklab,var(--color-foreground)_7%,transparent)]" />
+    <div
+      className={cn(
+        "border-[--pattern-fg] border-x bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed [--pattern-fg:color-mix(in_oklab,var(--color-foreground)_7%,transparent)]",
+        className,
+      )}
+    />
   );
 };
 

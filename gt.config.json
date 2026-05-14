@@ -8,5 +8,6 @@
     "gt": {
       "output": "public/_gt/[locale].json"
     }
-  }
+  },
+  "_versionId": "0ffe48679635965d6243184cb86accdeb3272db321b0f9ac836c424051a79774"
 }

@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "branchId": "",
+  "entries": [
+    {
+      "fileId": "879f3a5f954ee8b75bf1e91f4ea9916b41c933e5beba7eb6362647a637c9c66d",
+      "versionId": "0ffe48679635965d6243184cb86accdeb3272db321b0f9ac836c424051a79774",
+      "translations": {
+        "es": {
+          "updatedAt": "2026-05-14T22:01:57.324Z",
+          "fileName": "/Users/ted/Documents/Projects/portfolio-v9/public/_gt/es.json",
+          "postProcessHash": "b96141822e604fbe4760e08c8b61d83fbae0bb1c289cc15374fd413194a2a289"
+        },
+        "fr": {
+          "updatedAt": "2026-05-14T22:01:57.330Z",
+          "fileName": "/Users/ted/Documents/Projects/portfolio-v9/public/_gt/fr.json",
+          "postProcessHash": "b96141822e604fbe4760e08c8b61d83fbae0bb1c289cc15374fd413194a2a289"
+        }
+      },
+      "fileName": "__INTERNAL_GT_TEMPLATE_NAME__",
+      "staged": false
+    }
+  ]
+}

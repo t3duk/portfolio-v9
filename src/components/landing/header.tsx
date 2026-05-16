@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { LetsConnect } from "../contact-me";
 import { ContentBox } from "../layout/shell";
+import { TiltImage } from "../tilt-img";
 import { Button } from "../ui/button";
 
 export const Header = () => {
@@ -9,19 +11,23 @@ export const Header = () => {
       className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-0"
       position="middle"
     >
-      <div className="flex flex-col gap-1">
-        <h1 className="flex flex-row items-baseline gap-2 tracking-tight">
-          <span className="font-extrabold font-mono text-4xl md:text-5xl">
-            Ted
-          </span>
-          <span className="font-medium font-mono text-4xl text-muted-foreground md:text-5xl">
-            Brine
-          </span>
-        </h1>
-        <p className="font-medium text-muted-foreground/80">
-          Software Engineer
-        </p>
+      <div className="flex flex-row items-center gap-4">
+        <TiltImage />
+        <div className="flex flex-col gap-1">
+          <h1 className="flex flex-row items-baseline gap-2 tracking-tight">
+            <span className="font-extrabold font-mono text-4xl md:text-5xl">
+              Ted
+            </span>
+            <span className="font-medium font-mono text-4xl text-muted-foreground md:text-5xl">
+              Brine
+            </span>
+          </h1>
+          <p className="font-medium text-muted-foreground/80">
+            Software Engineer
+          </p>
+        </div>
       </div>
+
       <div className="flex-row items-center gap-1">
         <Button asChild={true} className="" variant="ghost" size="icon">
           <Link
@@ -29,7 +35,7 @@ export const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/x.svg" alt="X" className="h-4 w-4" />
+            <FaXTwitter />
           </Link>
         </Button>
         <Button asChild={true} className="" variant="ghost" size="icon">
@@ -38,7 +44,7 @@ export const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/linkedin.svg" alt="X" className="h-4 w-4" />
+            <FaLinkedin />
           </Link>
         </Button>
         <LetsConnect />

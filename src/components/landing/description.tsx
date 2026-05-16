@@ -4,7 +4,7 @@ import { ContentBox } from "../layout/shell";
 
 export const Description = () => {
   return (
-    <ContentBox className="flex flex-col gap-1" position="last">
+    <ContentBox className="flex flex-col gap-3" position="last">
       <p className="text-foreground/80">
         I&apos;m a <Num>{getAge(new Date("2009-01-22"))}</Num> year old{" "}
         <span className="text-foreground">Software Engineer</span> from{" "}
@@ -17,8 +17,11 @@ export const Description = () => {
           />
           Great Britain
         </span>
-        . I build useful software with real systems behind it: products, APIs,
-        infrastructure, and tools that solve actual problems.
+        .
+      </p>
+      <p className="text-foreground/80">
+        I build distributed software systems focused on infrastructure,
+        real-time communication, and scalable web applications.
       </p>
     </ContentBox>
   );

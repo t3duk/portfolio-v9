@@ -13,9 +13,10 @@ export default function Home() {
         <ContentBox position="first" className="h-12 sm:h-16 md:h-24" />
         <Header />
         <Description />
-        <Image
+        {/** biome-ignore lint/performance/noImgElement: img */}
+        <img
           src="/signature.png"
-          className="mx-auto my-16 w-24"
+          className="mx-auto my-16 w-20"
           alt="Signature"
           width={128}
           height={128}

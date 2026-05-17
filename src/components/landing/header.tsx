@@ -14,7 +14,7 @@ export const Header = () => {
         {/** biome-ignore lint/performance/noImgElement: img */}
         <img
           alt="Figure"
-          className="h-22 w-18 rounded-2xl object-cover"
+          className="hidden h-22 w-18 rounded-2xl object-cover sm:flex"
           src="/figure.jpg"
         />
         <div className="flex flex-col gap-1">

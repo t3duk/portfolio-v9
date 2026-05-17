@@ -2,7 +2,6 @@ import Link from "next/link";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { LetsConnect } from "../contact-me";
 import { ContentBox } from "../layout/shell";
-import { TiltImage } from "../tilt-img";
 import { Button } from "../ui/button";
 
 export const Header = () => {
@@ -12,7 +11,12 @@ export const Header = () => {
       position="middle"
     >
       <div className="flex flex-row items-center gap-4">
-        <TiltImage />
+        {/** biome-ignore lint/performance/noImgElement: img */}
+        <img
+          alt="Figure"
+          className="h-22 w-18 rounded-2xl object-cover"
+          src="/figure.jpg"
+        />
         <div className="flex flex-col gap-1">
           <h1 className="flex flex-row items-baseline gap-2 tracking-tight">
             <span className="font-extrabold font-mono text-4xl md:text-5xl">

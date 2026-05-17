@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Description } from "@/components/landing/description";
 import { Header } from "@/components/landing/header";
 import { ContentBox, PageShell } from "@/components/layout/shell";
+import { Tech } from "@/components/landing/tech";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <ContentBox position="first" className="h-12 sm:h-16 md:h-24" />
         <Header />
         <Description />
+        <Tech />
         {/** biome-ignore lint/performance/noImgElement: img */}
         <img
           src="/signature.png"

@@ -3,6 +3,7 @@ import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { LetsConnect } from "../contact-me";
 import { ContentBox } from "../layout/shell";
 import { Button } from "../ui/button";
+import { LocaleSelector } from "gt-next";
 
 export const Header = () => {
   return (
@@ -31,6 +32,7 @@ export const Header = () => {
           </p>
         </div>
       </div>
+
 
       <div className="flex-row items-center gap-1">
         <Button asChild={true} className="" variant="ghost" size="icon">

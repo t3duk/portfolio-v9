@@ -1,4 +1,4 @@
-import { Num } from "gt-next";
+import { Num, T } from "gt-next";
 import { getAge } from "@/lib/date";
 import { ContentBox } from "../layout/shell";
 
@@ -20,8 +20,10 @@ export const Description = () => {
         .
       </p>
       <p className="text-foreground/80">
-        I build distributed software systems focused on infrastructure,
-        real-time communication, and scalable web applications.
+        <T>
+          I build distributed software systems focused on infrastructure,
+          real-time communication, and scalable web applications.
+        </T>
       </p>
     </ContentBox>
   );

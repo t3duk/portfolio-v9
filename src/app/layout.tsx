@@ -33,11 +33,11 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-full flex-col">
-        <GTProvider>
-          <SensoryUIProvider>
+        <SensoryUIProvider>
+          <GTProvider>
             <ThemeProvider forcedTheme="dark">{children}</ThemeProvider>
-          </SensoryUIProvider>
-        </GTProvider>
+          </GTProvider>
+        </SensoryUIProvider>
       </body>
     </html>
   );

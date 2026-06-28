@@ -1,11 +1,13 @@
 "use client";
 
+import { Loader2 } from "lucide-react";
 import {
   Controller,
   type SubmitHandler,
   type UseFormReturn,
 } from "react-hook-form";
 import type { LetsConnectFormValues } from "@/components/contact/schema";
+import type { LetsConnectFormStatus } from "@/components/contact/use-lets-connect-form";
 import { Button } from "@/components/ui/button";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -15,12 +17,16 @@ import { cn } from "@/lib/utils";
 type LetsConnectFormProps = {
   form: UseFormReturn<LetsConnectFormValues>;
   onSubmit: SubmitHandler<LetsConnectFormValues>;
+  status?: LetsConnectFormStatus;
+  errorMessage?: string | null;
   className?: string;
 };
 
 export const LetsConnectForm = ({
   form,
   onSubmit,
+  status = "idle",
+  errorMessage,
   className,
 }: LetsConnectFormProps) => {
   return (
@@ -63,7 +69,19 @@ export const LetsConnectForm = ({
           </Field>
         )}
       />
-      <Button type="submit">Send message</Button>
+      {errorMessage ? (
+        <p className="text-destructive text-sm">{errorMessage}</p>
+      ) : null}
+      <Button type="submit" disabled={status === "submitting"}>
+        {status === "submitting" ? (
+          <>
+            <Loader2 className="animate-spin" data-icon="inline-start" />
+            Sending…
+          </>
+        ) : (
+          "Send message"
+        )}
+      </Button>
     </form>
   );
 };

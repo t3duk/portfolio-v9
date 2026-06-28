@@ -23,7 +23,16 @@ type LetsConnectProps = {
 
 export const LetsConnect = ({ trigger: triggerProp }: LetsConnectProps) => {
   const [open, setOpen] = React.useState(false);
-  const { form, onSubmit } = useLetsConnectForm();
+  const { form, onSubmit, status, errorMessage, reset } = useLetsConnectForm({
+    onSuccess: () => setOpen(false),
+  });
+
+  const handleOpenChange = (nextOpen: boolean) => {
+    setOpen(nextOpen);
+    if (!nextOpen) {
+      reset();
+    }
+  };
 
   const trigger = triggerProp ?? (
     <Button variant="ghost">
@@ -32,14 +41,19 @@ export const LetsConnect = ({ trigger: triggerProp }: LetsConnectProps) => {
   );
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{connectCopy.title}</DialogTitle>
           <DialogDescription>{connectCopy.description}</DialogDescription>
         </DialogHeader>
-        <LetsConnectForm form={form} onSubmit={onSubmit} />
+        <LetsConnectForm
+          form={form}
+          onSubmit={onSubmit}
+          status={status}
+          errorMessage={errorMessage}
+        />
       </DialogContent>
     </Dialog>
   );

@@ -54,13 +54,15 @@ const SocialIconButtons = () => (
 const MobileConnectMenu = () => {
   const [open, setOpen] = React.useState(false);
   const [view, setView] = React.useState<ConnectView>("links");
-  const { form, onSubmit } = useLetsConnectForm();
+  const { form, onSubmit, status, errorMessage, reset } = useLetsConnectForm({
+    onSuccess: () => setOpen(false),
+  });
 
   const handleOpenChange = (nextOpen: boolean) => {
     setOpen(nextOpen);
     if (!nextOpen) {
       setView("links");
-      form.reset();
+      reset();
     }
   };
 
@@ -131,6 +133,8 @@ const MobileConnectMenu = () => {
             <LetsConnectForm
               form={form}
               onSubmit={onSubmit}
+              status={status}
+              errorMessage={errorMessage}
               className="px-4 pb-8"
             />
           </>

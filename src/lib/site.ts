@@ -13,7 +13,7 @@ export const site = {
   seo: {
     tagline:
       "Building distributed software systems focused on infrastructure, real-time communication, and scalable web applications.",
-    description: `${fullName} is a software engineer from Great Britain specialising in distributed systems, infrastructure, real-time communication, and scalable web applications. Portfolio, projects, and contact.`,
+    description: `${fullName} is a software engineer from Great Britain specialising in distributed systems, infrastructure, real-time communication, and scalable web applications.`,
     keywords: [
       fullName,
       "Ted Brine portfolio",

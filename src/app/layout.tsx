@@ -1,9 +1,17 @@
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { SensoryUIProvider } from "@/components/ui/sensory-ui/config/provider";
-import "./globals.css";
-import { GTProvider } from "gt-next";
-import { ThemeProvider } from "next-themes";
+import { JsonLd } from "@/components/layout/json-ld";
+import { Providers } from "@/components/layout/providers";
+import { createMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
+import "./globals.css";
+
+export const metadata: Metadata = createMetadata();
+
+export const viewport: Viewport = {
+  themeColor: "#242428",
+  colorScheme: "dark",
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +41,8 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-full flex-col">
-        <SensoryUIProvider>
-          <GTProvider>
-            <ThemeProvider forcedTheme="dark">{children}</ThemeProvider>
-          </GTProvider>
-        </SensoryUIProvider>
+        <JsonLd />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

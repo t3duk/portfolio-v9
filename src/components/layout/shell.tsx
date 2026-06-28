@@ -30,11 +30,8 @@ export const ContentBox = ({
   position = "middle",
   className,
   ...props
-}: {
-  children?: React.ReactNode;
+}: React.ComponentProps<"section"> & {
   position?: SectionPosition;
-  className?: string;
-  props?: React.HTMLAttributes<HTMLElement>;
 }) => {
   return (
     <section

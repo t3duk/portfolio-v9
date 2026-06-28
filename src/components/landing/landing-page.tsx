@@ -1,0 +1,19 @@
+import { Description } from "@/components/landing/description";
+import { Header } from "@/components/landing/header";
+import { Signature } from "@/components/landing/signature";
+import { StatusSection } from "@/components/landing/status/status-section";
+import { Tech } from "@/components/landing/tech/tech";
+import { ContentBox, PageShell } from "@/components/layout/shell";
+
+export const LandingPage = () => {
+  return (
+    <PageShell>
+      <ContentBox position="first" className="h-12 sm:h-16 md:h-24" />
+      <Header />
+      <StatusSection />
+      <Description />
+      <Tech />
+      <Signature />
+    </PageShell>
+  );
+};

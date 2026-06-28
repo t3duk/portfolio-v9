@@ -1,0 +1,4 @@
+Contact: mailto:security@ted.ac
+Expires: 2026-01-01T09:00:00Z
+Encryption: https://ted.ac/pgp
+Canonical: https://ted.ac/security.txt

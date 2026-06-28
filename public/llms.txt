@@ -1,0 +1,29 @@
+# Ted Brine
+
+> Software engineer from Great Britain building distributed software systems focused on infrastructure, real-time communication, and scalable web applications.
+
+## About
+
+Ted Brine is a software engineer based in Great Britain. His work centres on distributed systems, backend infrastructure, real-time communication, and scalable web applications. This site is his personal portfolio and primary contact point.
+
+## Expertise
+
+- Distributed software systems
+- Infrastructure engineering
+- Real-time communication
+- Scalable web applications
+- Next.js, React, TypeScript, Node.js
+- PostgreSQL, Redis, Docker, Cloudflare
+
+## Links
+
+- Homepage: https://ted.ac
+- PGP public key: https://ted.ac/pgp
+- Services and terms: https://ted.ac/services
+- X: https://x.com/tedbrine
+- LinkedIn: https://linkedin.com/in/tedbrine
+- Calendar: https://els.cal.com/ted
+
+## Contact
+
+Use the contact form on https://ted.ac or book a meeting via the calendar link above.

@@ -7,7 +7,7 @@ type ContactEmailInput = {
 };
 
 function formatFromAddress(email: string) {
-  return `${email} <${CONTACT_FROM}>`;
+  return `${email.split("@")[0]} <${CONTACT_FROM}>`;
 }
 
 export async function sendContactEmail({ email, message }: ContactEmailInput) {
@@ -42,3 +42,4 @@ export async function sendContactEmail({ email, message }: ContactEmailInput) {
 
   return response.json();
 }
+

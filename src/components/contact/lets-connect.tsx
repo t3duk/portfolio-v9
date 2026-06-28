@@ -43,7 +43,7 @@ export const LetsConnect = ({ trigger: triggerProp }: LetsConnectProps) => {
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="top-4 left-1/2 -translate-x-1/2 translate-y-0 sm:top-6 sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{connectCopy.title}</DialogTitle>
           <DialogDescription>{connectCopy.description}</DialogDescription>

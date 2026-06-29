@@ -8,6 +8,7 @@ import type {
 } from "@/lib/status/types";
 
 const HACKATIME_IDLE_MINUTES = 15;
+const LASTFM_RECENT_ACTIVITY_MINUTES = 5;
 
 type LanyardActivity = {
   type: number;
@@ -39,6 +40,7 @@ type LastFmTrack = {
   name: string;
   url: string;
   "@attr"?: { nowplaying?: string };
+  date?: { uts: string };
 };
 
 type LastFmResponse = {
@@ -143,12 +145,26 @@ async function fetchLastFm(
       return null;
     }
 
+    const isNowPlaying = latest["@attr"]?.nowplaying === "true";
+
+    if (!isNowPlaying) {
+      const playedAtSeconds = Number.parseInt(latest.date?.uts ?? "", 10);
+      const minutesSincePlayed = (Date.now() - playedAtSeconds * 1000) / 60_000;
+
+      if (
+        !Number.isFinite(minutesSincePlayed) ||
+        minutesSincePlayed > LASTFM_RECENT_ACTIVITY_MINUTES
+      ) {
+        return null;
+      }
+    }
+
     return {
       artist: latest.artist["#text"],
       track: latest.name,
       url: latest.url,
       source: "lastfm",
-      isNowPlaying: latest["@attr"]?.nowplaying === "true",
+      isNowPlaying,
     };
   } catch {
     return null;

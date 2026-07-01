@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  ArrowLeft,
-  ArrowUpRight,
-  Calendar,
-  Send,
-  Sparkles,
-} from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Send, Sparkles } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
-import { FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { TbBrandLinkedin, TbBrandTwitter, TbCalendar } from "react-icons/tb";
 import { LetsConnectForm } from "@/components/contact/lets-connect-form";
 import { LetsConnect } from "@/components/contact/lets-connect";
 import {
@@ -26,12 +20,33 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { site } from "@/lib/site";
+import { cn } from "@/lib/utils";
+
+const SOCIAL_ICON_STROKE = 2.5;
 
 const socialIcons = {
-  X: FaTwitter,
-  LinkedIn: FaLinkedin,
-  Calendar,
+  X: TbBrandTwitter,
+  LinkedIn: TbBrandLinkedin,
+  Calendar: TbCalendar,
 } as const;
+
+type SocialIconComponent = React.ComponentType<{
+  className?: string;
+  strokeWidth?: number;
+}>;
+
+const SocialIcon = ({
+  icon: Icon,
+  className,
+}: {
+  icon: SocialIconComponent;
+  className?: string;
+}) => (
+  <Icon
+    strokeWidth={SOCIAL_ICON_STROKE}
+    className={cn("text-foreground/80", className)}
+  />
+);
 
 type ConnectView = "links" | "form";
 
@@ -42,7 +57,7 @@ const SocialIconButtons = () => (
       return (
         <Button key={href} asChild variant="ghost" size="icon">
           <Link href={href} target="_blank" rel="noopener noreferrer">
-            <Icon />
+            <SocialIcon icon={Icon} />
             <span className="sr-only">{label}</span>
           </Link>
         </Button>
@@ -102,7 +117,7 @@ const MobileConnectMenu = () => {
                       rel="noopener noreferrer"
                       onClick={() => setOpen(false)}
                     >
-                      <Icon className="size-5 shrink-0" />
+                      <SocialIcon icon={Icon} className="size-5 shrink-0" />
                       <span className="font-medium">{label}</span>
                       <ArrowUpRight className="ml-auto size-4 text-muted-foreground" />
                     </Link>
